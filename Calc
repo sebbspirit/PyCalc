@@ -1,0 +1,45 @@
+op_input = raw_input("Welcome to PyCalc. Please type in a basic operation to continue, or if you aren't sure type 'help'. Otherwise, type 'new' to use a prebuilt formula. \n")
+list_op = ["+", "-", "*", "/", "^"]
+list_eq = []
+list_nums = []
+temp_op = True
+
+
+if op_input == "help":
+    print("Here's a list of operations: \n Addition(+)\n Subtraction(-)\n Multiplication(x) \n Division(/) \n ExponentValue(^)\n ")
+    temp_op = raw_input("Alright! You can type in your operation below to continue: \n")
+if op_input == "new":
+    print("Here's a guide to some of the prebuilt formulas that PyCalc has to offer: \n Mean Average(MA) \n ")
+    temp_eq = raw_input("Now type in the acronym for the wanted formula: \n")
+    if temp_eq == "MA":
+        prompt_length_list = int(input("Insert amount of numbers: \n"))
+        max_length_list = prompt_length_list
+        print("Average Calculator\nType 'x' to stop.\n ")
+        for _ in range(max_length_list):
+            prompt = input("Insert Number Here:\n")
+            if prompt == 'x':
+                break
+            else:
+                list_nums.append(float(prompt))
+        average = sum(list_nums) / len(list_nums)
+        print(average)
+        print("Thanks for using PyCalc! Come Again!")
+        exit()
+    #MORE FORMULAS!!!! ADD A WAY TO ADD FORMULAS
+while temp_op == True:
+    num = list_nums.append(int(input("Choose the First Number: \n")))
+
+if op_input == "+" or temp_op == "+":
+    print(list_nums[0] + list_nums[1])
+elif op_input == "-" or temp_op == "-":
+    print(list_nums[0] - list_nums[1])
+elif op_input == "x" or temp_op == "x":
+    print(list_nums[0]*list_nums[1])
+elif op_input == "/" or temp_op == "/":
+    print(list_nums[0]/list_nums[1])
+elif op_input == "^" or temp_op == "^":
+    print(list_nums[0]**list_nums[1])
+
+
+print("Thanks for using PyCalc! Come Again!")
+#Make a way for the user to BUILD their own calculator, with different equations, formulas, and ways of averaging. Append new operation ways and use a loop
